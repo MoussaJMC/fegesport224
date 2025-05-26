@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md font-semibold transition-all duration-200 inline-flex items-center gap-2 justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-600 focus:ring-2 focus:ring-accent-300 focus:outline-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-gray-900 hover:bg-secondary-600 focus:ring-2 focus:ring-secondary-300 focus:outline-none;
+  }
+  
+  .btn-accent {
+    @apply bg-primary text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+  
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+  
+  .form-input {
+    @apply w-full rounded-md border-gray-300 shadow-sm focus:border-accent-500 focus:ring focus:ring-accent-200 focus:ring-opacity-50;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-accent-600 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+  }
+  
+  .nav-link.active {
+    @apply text-accent-600 font-semibold;
+  }
+}
+
+/* Animation styles */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent-300 rounded-full hover:bg-accent-400;
+}
